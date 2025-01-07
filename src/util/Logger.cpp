@@ -12,7 +12,7 @@ namespace Server{
         logLevel_ = level;
     }
 
-    void Logger::log(std::string &msg){
+    void Logger::log(const std::string &msg){
         if(logLevel_==LogLevel::INFO){
             std::cout << "[INFO]";
         }else if(logLevel_==LogLevel::ERROR){

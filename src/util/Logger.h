@@ -7,7 +7,7 @@
 #define LOG_INFO(logMsgFormat, ...) \
     do{ \
         Logger &logger = Server::Logger::instance(); \
-        logger.setLogLevel(Server::Logger::LogLevel::INFO); \
+        logger.setLogLevel(Server::LogLevel::INFO); \
         char buf[1024] = {0}; \
         snprintf(buf, 1024, logMsgFormat, ##__VA_ARGS__);\
         logger.log(buf); \
@@ -16,7 +16,7 @@
 #define LOG_WARN(logMsgFormat, ...) \
     do{ \
         Logger &logger = Server::Logger::instance(); \
-        logger.setLogLevel(Server::Logger::LogLevel::WARN); \
+        logger.setLogLevel(Server::LogLevel::WARN); \
         char buf[1024] = {0}; \
         snprintf(buf, 1024, logMsgFormat, ##__VA_ARGS__);\
         logger.log(buf); \
@@ -25,7 +25,7 @@
 #define LOG_ERROR(logMsgFormat, ...) \
     do{ \
         Logger &logger = Server::Logger::instance(); \
-        logger.setLogLevel(Server::Logger::LogLevel::ERROR); \
+        logger.setLogLevel(Server::LogLevel::ERROR); \
         char buf[1024] = {0}; \
         snprintf(buf, 1024, logMsgFormat, ##__VA_ARGS__);\
         logger.log(buf); \
@@ -35,7 +35,7 @@
 #define LOG_DEBUG(logMsgFormat, ...) \
     do{ \
         Logger &logger = Server::Logger::instance(); \
-        logger.setLogLevel(Server::Logger::LogLevel::DEBUG); \
+        logger.setLogLevel(Server::LogLevel::DEBUG); \
         char buf[1024] = {0}; \
         snprintf(buf, 1024, logMsgFormat, ##__VA_ARGS__);\
         logger.log(buf); \
@@ -58,7 +58,7 @@ namespace Server {
         public:
             static Logger& instance();
             void setLogLevel(LogLevel level);
-            void log(std::string &msg);
+            void log(const std::string &msg);
         private:
             int logLevel_;
             Logger(){};

@@ -3,7 +3,7 @@
 #include <arpa/inet.h> 
 #include <string>
 
-namespace Server{
+namespace Server::Net{
     class InetAddress{
         public:
             explicit InetAddress(uint16_t port, const std::string &ip = "127.0.0.1");

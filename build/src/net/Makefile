@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhiyi/muduo/build/CMakeFiles /home/zhiyi/muduo/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/zhiyi/muduo/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zhiyi/muduo/build/CMakeFiles /home/zhiyi/muduo/build/src/net/CMakeFiles/progress.marks
+	cd /home/zhiyi/muduo/build && $(MAKE) -f CMakeFiles/Makefile2 src/net/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhiyi/muduo/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/zhiyi/muduo/build && $(MAKE) -f CMakeFiles/Makefile2 src/net/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,87 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhiyi/muduo/build && $(MAKE) -f CMakeFiles/Makefile2 src/net/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhiyi/muduo/build && $(MAKE) -f CMakeFiles/Makefile2 src/net/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zhiyi/muduo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named util
+# Convenience name for target.
+src/net/CMakeFiles/net.dir/rule:
+	cd /home/zhiyi/muduo/build && $(MAKE) -f CMakeFiles/Makefile2 src/net/CMakeFiles/net.dir/rule
+.PHONY : src/net/CMakeFiles/net.dir/rule
 
-# Build rule for target.
-util: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 util
-.PHONY : util
+# Convenience name for target.
+net: src/net/CMakeFiles/net.dir/rule
 
-# fast build rule for target.
-util/fast:
-	$(MAKE) -f src/util/CMakeFiles/util.dir/build.make src/util/CMakeFiles/util.dir/build
-.PHONY : util/fast
-
-#=============================================================================
-# Target rules for targets named net
-
-# Build rule for target.
-net: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 net
 .PHONY : net
 
 # fast build rule for target.
 net/fast:
-	$(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/build
+	cd /home/zhiyi/muduo/build && $(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/build
 .PHONY : net/fast
+
+Channel.o: Channel.cpp.o
+
+.PHONY : Channel.o
+
+# target to build an object file
+Channel.cpp.o:
+	cd /home/zhiyi/muduo/build && $(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/Channel.cpp.o
+.PHONY : Channel.cpp.o
+
+Channel.i: Channel.cpp.i
+
+.PHONY : Channel.i
+
+# target to preprocess a source file
+Channel.cpp.i:
+	cd /home/zhiyi/muduo/build && $(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/Channel.cpp.i
+.PHONY : Channel.cpp.i
+
+Channel.s: Channel.cpp.s
+
+.PHONY : Channel.s
+
+# target to generate assembly for a file
+Channel.cpp.s:
+	cd /home/zhiyi/muduo/build && $(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/Channel.cpp.s
+.PHONY : Channel.cpp.s
+
+InetAddress.o: InetAddress.cpp.o
+
+.PHONY : InetAddress.o
+
+# target to build an object file
+InetAddress.cpp.o:
+	cd /home/zhiyi/muduo/build && $(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/InetAddress.cpp.o
+.PHONY : InetAddress.cpp.o
+
+InetAddress.i: InetAddress.cpp.i
+
+.PHONY : InetAddress.i
+
+# target to preprocess a source file
+InetAddress.cpp.i:
+	cd /home/zhiyi/muduo/build && $(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/InetAddress.cpp.i
+.PHONY : InetAddress.cpp.i
+
+InetAddress.s: InetAddress.cpp.s
+
+.PHONY : InetAddress.s
+
+# target to generate assembly for a file
+InetAddress.cpp.s:
+	cd /home/zhiyi/muduo/build && $(MAKE) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/InetAddress.cpp.s
+.PHONY : InetAddress.cpp.s
 
 # Help Target
 help:
@@ -144,8 +187,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... util"
 	@echo "... net"
+	@echo "... Channel.o"
+	@echo "... Channel.i"
+	@echo "... Channel.s"
+	@echo "... InetAddress.o"
+	@echo "... InetAddress.i"
+	@echo "... InetAddress.s"
 .PHONY : help
 
 
@@ -157,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zhiyi/muduo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

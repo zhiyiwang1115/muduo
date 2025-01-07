@@ -2,7 +2,7 @@
 #include <cstring>
 #include <string>
 
-namespace Server{
+namespace Server::Net{
             InetAddress::InetAddress(uint16_t port, const std::string &ip){
                 memset(&addr_, 0 ,sizeof addr_);
                 //ipv4, ad_inetv6 is ipv6
