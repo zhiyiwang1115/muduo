@@ -1,7 +1,8 @@
 #include "Logger.h"
 #include <iostream>
+#include "Timestamp.h"
 
-namespace Server::Logger{
+namespace Server{
     Logger& Logger::instance(){
         static Logger logger;
         return logger;
@@ -22,6 +23,6 @@ namespace Server::Logger{
             std::cout << "[DEBUG]";
         }
 
-        std:: cout << "print time" << " : " << msg << std::endl;
+        std:: cout << Timestamp::now().toString() << " : " << msg << std::endl;
     }
 }

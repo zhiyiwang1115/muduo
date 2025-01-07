@@ -44,7 +44,7 @@
 #define LOG_DEBUG(logMsgFormat, ...)
 #endif
 
-namespace Server::Logger {
+namespace Server {
     // INFO ERROR FATAL DEBUG
     enum LogLevel{
         INFO,
