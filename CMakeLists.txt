@@ -1,13 +1,12 @@
-cmake_minimum_required(VERSION 2.5)
-project(server)
+# Minimum CMake version required
+cmake_minimum_required(VERSION 3.10)
 
-# dynamic pakcage would be put under ./lib
-set(LIBRARY_OUTPUT_DIRECTORY ./lib)
+# Project name and version
+project(MyProject VERSION 1.0)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++14")
+# Specify C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# define file to be compiled
-aux_source_directory(./src SRC_LIST)
-
-# generate dynamic package
-add_library(server SHARED ${SRC_LIST})
+# Add subdirectories
+add_subdirectory(src/util)   # Add the util library

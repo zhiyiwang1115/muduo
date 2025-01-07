@@ -4,7 +4,7 @@
 namespace Server{
     Timestamp::Timestamp():microSecondsSinceEpoch_(0){}
     
-    explicit Timestamp::Timestamp(int64_t microSecondsSinceEpoch)
+    Timestamp::Timestamp(int64_t microSecondsSinceEpoch)
     :microSecondsSinceEpoch_(microSecondsSinceEpoch){}
 
     Timestamp Timestamp::now(){
