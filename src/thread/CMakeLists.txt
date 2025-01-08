@@ -1,4 +1,4 @@
-# Create the util library
+# Create the thread library
 add_library(thread
     CurrentThread.cpp
 )
