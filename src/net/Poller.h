@@ -9,9 +9,9 @@ namespace Server::Net{
     class EventLoop;
 
     class Poller: Noncopyable{
-        using ChannelList = std::vector<Channel*>;
         using ChannelMap = std::unordered_map<int, Channel*>;
         public:
+            using ChannelList = std::vector<Channel*>;
             explicit Poller(EventLoop* loop);
             virtual ~Poller();
             virtual Timestamp poll(int timeOut, ChannelList &activeChannels) = 0;

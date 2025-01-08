@@ -3,6 +3,8 @@ add_library(net
     Channel.cpp
     InetAddress.cpp
     Poller.cpp
+    DefaultPoller.cpp
+    EpollPoller.cpp
 )
 
 # Include directories for the net library

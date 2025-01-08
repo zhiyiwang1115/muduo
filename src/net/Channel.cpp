@@ -8,6 +8,7 @@ namespace Server::Net{
             const int Channel::kReadEvent = EPOLLIN | EPOLLPRI;
             const int Channel::kWriteEvent = EPOLLOUT;
 
+            //index is initialized as -1, which represents the state of channel represented in Epoller
             Channel::Channel(EventLoop *loop, int fd)
                 :loop_(loop)
                 , fd_(fd)
