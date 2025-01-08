@@ -11,3 +11,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Add subdirectories
 add_subdirectory(src/util)  # Build util library
 add_subdirectory(src/net)   # Build net library
+add_subdirectory(src/thread)   # Build thread library

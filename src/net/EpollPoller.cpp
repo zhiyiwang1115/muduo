@@ -28,7 +28,7 @@ namespace Server::Net
             }
             //channellist returns channels having events
             Timestamp EpollPoller::poll(int timeOut, ChannelList &activeChannels){
-                LOG_INFO("fun=%s => fd total count: %d\n",__FUNCTION__, channelMap_.size());
+                LOG_INFO("fun=%s => fd total count: %ld\n",__FUNCTION__, channelMap_.size());
                 int numEvents = epoll_wait(epollfd_, &*events_.begin(), events_.size(), timeOut);
                 //is error no global for all thread or local for each thread?
                 int curErrno = errno;
