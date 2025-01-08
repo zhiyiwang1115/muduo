@@ -36,6 +36,7 @@ namespace Server::Net{
 
             int index() const;
             void set_index(int index);
+            int fd() const;
 
             EventLoop* ownerLoop() const;
             void remove();

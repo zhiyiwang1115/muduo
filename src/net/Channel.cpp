@@ -52,6 +52,8 @@ namespace Server::Net{
             int Channel::index() const{return index_;}
             void Channel::set_index(int index){index_ = index;}
 
+            int Channel::fd() const{return fd_;}
+
             EventLoop* Channel::ownerLoop() const{return loop_;}
             void Channel::remove(){
                 //TODO
