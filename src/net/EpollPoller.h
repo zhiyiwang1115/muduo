@@ -5,7 +5,9 @@
 
 namespace Server::Net
 {   
-    class EpollPoller: Poller{
+    // need to make it public inheritance
+    // otherwise outside code cannot treat EpollPoller as Poller
+    class EpollPoller: public Poller{
         using EventList = std::vector<epoll_event>;
         public:
             EpollPoller(EventLoop* loop);

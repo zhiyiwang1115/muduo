@@ -5,13 +5,14 @@ add_library(net
     Poller.cpp
     DefaultPoller.cpp
     EpollPoller.cpp
+    EventLoop.cpp
 )
 
 # Include directories for the net library
 target_include_directories(net PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Link the util library to the net library
-target_link_libraries(net PRIVATE util)
+target_link_libraries(net PRIVATE util thread)
 
 # Set output directory for the net library
 set_target_properties(net PROPERTIES

@@ -57,14 +57,12 @@ namespace Server::Net{
 
             EventLoop* Channel::ownerLoop() const{return loop_;}
             void Channel::remove(){
-                //TODO
-                //loop_->removeChannel(this);
+                loop_->removeChannel(this);
             }
 
             //update poller through eventloop
             void Channel::update(){
-                //TODO
-                //loop_->updateChannel(this);
+                loop_->updateChannel(this);
             }
 
             //invoke call back according to revents
