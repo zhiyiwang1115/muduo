@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/libnet.a  CMakeFiles/net.dir/Channel.cpp.o CMakeFiles/net.dir/InetAddress.cpp.o CMakeFiles/net.dir/Poller.cpp.o CMakeFiles/net.dir/DefaultPoller.cpp.o CMakeFiles/net.dir/EpollPoller.cpp.o CMakeFiles/net.dir/EventLoop.cpp.o
+/usr/bin/ranlib ../../../lib/libnet.a

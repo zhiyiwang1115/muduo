@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/util/Noncopyable.h
+
+/home/zhiyi/muduo/src/thread/CurrentThread.cpp
+CurrentThread.h
+/home/zhiyi/muduo/src/thread/CurrentThread.h
+unistd.h
+-
+sys/syscall.h
+-
+
+/home/zhiyi/muduo/src/thread/CurrentThread.h
+
+/home/zhiyi/muduo/src/thread/Thread.cpp
+Thread.h
+/home/zhiyi/muduo/src/thread/Thread.h
+CurrentThread.h
+/home/zhiyi/muduo/src/thread/CurrentThread.h
+semaphore.h
+-
+
+/home/zhiyi/muduo/src/thread/Thread.h
+Noncopyable.h
+/home/zhiyi/muduo/src/thread/Noncopyable.h
+functional
+-
+thread
+-
+memory
+-
+string
+-
+atomic
+-
+
